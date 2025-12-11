@@ -341,8 +341,8 @@ class UNETLoader_Any:
         elif weight_dtype == "fp8_e5m2":
             model_options["dtype"] = torch.float8_e5m2
 
-        unet_path = folder_paths.get_full_path_or_raise("unet", unet_name)
-        model = comfy.sd.load_unet(unet_path, model_options=model_options, embedding_directory=folder_paths.get_folder_paths("embeddings"))
+        unet_path = folder_paths.get_full_path_or_raise("diffusion_models", unet_name)
+        model = comfy.sd.load_diffusion_model(unet_path, model_options=model_options)
         return (model,)
 
 class CLIPLoader_Any:
