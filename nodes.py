@@ -98,33 +98,6 @@ class CheckpointLoaderSimple_Any:
         return out[:3]
 
 
-class DiffusersLoader_Any:
-    @classmethod
-    def INPUT_TYPES(cls):
-        paths = []
-        for search_path in folder_paths.get_folder_paths("diffusers"):
-            if os.path.exists(search_path):
-                for root, subdir, files in os.walk(search_path, followlinks=True):
-                    if "model_index.json" in files:
-                        paths.append(os.path.relpath(root, start=search_path))
-
-        return {"required": {"model_path": (paths,), }, "optional": {"any": (IO.ANY, {})}}
-    RETURN_TYPES = ("MODEL", "CLIP", "VAE")
-    FUNCTION = "load_checkpoint"
-
-    CATEGORY = "advanced/loaders/deprecated"
-
-    def load_checkpoint(self, model_path, any=None, output_vae=True, output_clip=True):
-        for search_path in folder_paths.get_folder_paths("diffusers"):
-            if os.path.exists(search_path):
-                path = os.path.join(search_path, model_path)
-                if os.path.exists(path):
-                    model_path = path
-                    break
-
-        return comfy.diffusers_load.load_diffusers(model_path, output_vae=output_vae, output_clip=output_clip, embedding_directory=folder_paths.get_folder_paths("embeddings"))
-
-
 class unCLIPCheckpointLoader_Any:
     @classmethod
     def INPUT_TYPES(s):
@@ -345,14 +318,14 @@ class DiffControlNetLoader_Any:
         controlnet = comfy.controlnet.load_controlnet(controlnet_path, model)
         return (controlnet,)
 
-
 class UNETLoader_Any:
     @classmethod
     def INPUT_TYPES(s):
         return {"required": { "unet_name": (folder_paths.get_filename_list("unet"), ),
                               "weight_dtype": (["default", "fp8_e4m3fn", "fp8_e4m3fn_fast", "fp8_e5m2"],)
                              },
-                "optional": {"any": (IO.ANY, {})}}
+                "optional": {"any": (IO.ANY, {})}
+                }
     RETURN_TYPES = ("MODEL",)
     FUNCTION = "load_unet"
 
@@ -371,7 +344,6 @@ class UNETLoader_Any:
         unet_path = folder_paths.get_full_path_or_raise("unet", unet_name)
         model = comfy.sd.load_unet(unet_path, model_options=model_options, embedding_directory=folder_paths.get_folder_paths("embeddings"))
         return (model,)
-
 
 class CLIPLoader_Any:
     @classmethod
@@ -487,7 +459,6 @@ class GLIGENLoader_Any:
 NODE_CLASS_MAPPINGS = {
     "CheckpointLoader_Any": CheckpointLoader_Any,
     "CheckpointLoaderSimple_Any": CheckpointLoaderSimple_Any,
-    "DiffusersLoader_Any": DiffusersLoader_Any,
     "unCLIPCheckpointLoader_Any": unCLIPCheckpointLoader_Any,
     "LoraLoader_Any": LoraLoader_Any,
     "LoraLoaderModelOnly_Any": LoraLoaderModelOnly_Any,
@@ -503,19 +474,18 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "CheckpointLoader_Any": "Checkpoint Loader (Any)",
-    "CheckpointLoaderSimple_Any": "Checkpoint Loader Simple (Any)",
-    "DiffusersLoader_Any": "Diffusers Loader (Any)",
-    "unCLIPCheckpointLoader_Any": "unCLIP Checkpoint Loader (Any)",
-    "LoraLoader_Any": "Lora Loader (Any)",
-    "LoraLoaderModelOnly_Any": "Lora Loader Model Only (Any)",
-    "VAELoader_Any": "VAE Loader (Any)",
-    "ControlNetLoader_Any": "ControlNet Loader (Any)",
-    "DiffControlNetLoader_Any": "Diff ControlNet Loader (Any)",
-    "UNETLoader_Any": "UNET Loader (Any)",
-    "CLIPLoader_Any": "CLIP Loader (Any)",
-    "DualCLIPLoader_Any": "Dual CLIP Loader (Any)",
-    "CLIPVisionLoader_Any": "CLIP Vision Loader (Any)",
-    "StyleModelLoader_Any": "Style Model Loader (Any)",
-    "GLIGENLoader_Any": "GLIGEN Loader (Any)",
+    "CheckpointLoader_Any": "Load Checkpoint With Config (Any)",
+    "CheckpointLoaderSimple_Any": "Load Checkpoint (Any)",
+    "unCLIPCheckpointLoader_Any": "Load unCLIP Checkpoint (Any)",
+    "LoraLoader_Any": "Load LoRA (Any)",
+    "LoraLoaderModelOnly_Any": "Load LoRA for Model Only (Any)",
+    "VAELoader_Any": "Load VAE (Any)",
+    "ControlNetLoader_Any": "Load ControlNet Model (Any)",
+    "DiffControlNetLoader_Any": "Load ControlNet Model (diff) (Any)",
+    "UNETLoader_Any": "Load Diffusion Model (Any)",
+    "CLIPLoader_Any": "Load CLIP (Any)",
+    "DualCLIPLoader_Any": "Load Dual CLIP (Any)",
+    "CLIPVisionLoader_Any": "Load CLIP Vision (Any)",
+    "StyleModelLoader_Any": "Load Style Model (Any)",
+    "GLIGENLoader_Any": "Load GLIGEN (Any)",
 }
