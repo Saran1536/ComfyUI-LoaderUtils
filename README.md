@@ -54,6 +54,23 @@ This custom loader module addresses these issues by:
 
 The "_Any" suffix nodes can be used exactly like their original counterparts, with the added benefit that they can accept connections from any node type via the optional "any" parameter. This enables better workflow design for memory-constrained environments.
 
+## Example
+
+Here's an example workflow showing how the loader nodes with "any" parameter can be used to optimize memory management:
+
+![Example Workflow](example.png)
+
+The workflow file is also available as `workflow.json` in this repository.
+
+## Memory Management Benefits
+
+The key advantage of these loader nodes is that you can control WHEN models are loaded by connecting them strategically in your workflow. In the example above:
+
+1. The UNETLoader_Any is connected after the CLIPTextEncode nodes, allowing them to run before the heavy UNET model is loaded
+2. The VAELoader_Any is connected after sampling, allowing you to load the VAE only when needed for decoding
+
+This approach prevents all models from being loaded simultaneously, which was the root cause of VRAM OOM errors in standard ComfyUI usage.
+
 Simply use these nodes in place of the standard loader nodes, and strategically connect them to control when models are loaded into memory.
 
 ## Contact
